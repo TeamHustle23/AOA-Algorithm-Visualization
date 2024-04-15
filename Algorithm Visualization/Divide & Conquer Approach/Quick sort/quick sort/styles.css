@@ -1,0 +1,86 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#steps {
+    margin-top: 20px;
+}
+
+#sorted-array {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.step {
+    margin-bottom: 20px;
+}
+
+.bar {
+    display: inline-block;
+    background-color: #3498db; /* Default bar color */
+    margin-right: 5px;
+    transition: height 0.5s; /* Animation for bar height change */
+    text-align: center;
+    line-height: 100px; /* Vertical centering of text */
+}
+
+.bar.left {
+    background-color: #3498db; /* Color for bars in the left subarray */
+}
+
+.bar.right {
+    background-color: #2ecc71; /* Color for bars in the right subarray */
+}
+
+.bar.compare {
+    background-color: #f39c12; /* Color for bars during comparison */
+    color: #fff; /* Highlighted number color */
+}

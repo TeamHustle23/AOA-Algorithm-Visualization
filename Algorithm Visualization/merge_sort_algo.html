@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Merge Sort Algorithm</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet" />
+    
+  </head>
+
+  <body id="top">
+    <main>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <i class="bi-back"></i>
+            <span>Algorithm<br>Visualization</span>
+          </a>
+
+          <div class="d-lg-none ms-auto me-4">
+            <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-5 me-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="index.html#section_1"
+                  >Home</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="index.html#section_2"
+                  >Browse Algorithms</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="index.html#section_3"
+                  >How it works</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="index.html#section_4"
+                  >FAQs</a
+                >
+              </li>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <header
+        class="site-header d-flex flex-column justify-content-center align-items-center"
+      >
+        <div class="container">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-lg-5 col-12 mb-5">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="index.html">Homepage</a>
+                  </li>
+
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Merge Sort Algorithm
+                  </li>
+                </ol>
+              </nav>
+
+              <h2 class="text-white">
+                Introduction to <br />
+                Merge Sort Algorithm
+              </h2>
+
+              <div class="d-flex align-items-center mt-5">
+                <a
+                  href="./Divide & Conquer Approach/Merge Sort/Merge Sort/index.html"
+                  class="btn custom-btn custom-border-btn smoothscroll me-4"
+                  >Run Merge Sort Algorithm</a
+                >
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-12">
+              <div class="topics-detail-block bg-white shadow-lg">
+                <img
+                  src="images/topics/undraw_Finance_re_gnv2.png"
+                  class="topics-detail-block-image img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="topics-detail-section section-padding" id="topics-detail">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-12 m-auto">
+              <h3 class="mb-4">Introduction to Merge Sort Algorithm</h3>
+
+              <p>
+                
+              
+Merge Sort is a highly efficient sorting algorithm that follows the divide-and-conquer strategy. It begins by dividing the input array into two halves, recursively sorting each half, and then merging the sorted halves back together. The process continues until the entire array is sorted. This divide-and-conquer approach allows Merge Sort to achieve a time complexity of O(n log n), making it one of the fastest sorting algorithms for large datasets. Additionally, Merge Sort is a stable sorting algorithm, meaning that it preserves the relative order of equal elements in the sorted output. This stability is important in applications where the original order of equal elements needs to be maintained.
+              </p><br>
+
+              <h3 class="mb-4">Merge Sort Algorithm</h3>
+<p><strong>Split the array:</strong>
+  <br> Divide the unsorted array into two halves. Calculate the middle index of the array.</p>
+<p><strong>Recursively sort the halves:</strong>
+   <ul>
+      <li>Recursively sort the left half of the array.</li>
+      <li>Recursively sort the right half of the array.</li>
+   </ul>
+</p>
+<p><strong>Merge the sorted halves:</strong>
+   <ul>
+      <li>Compare each element of the two halves.</li>
+      <li>Select the smaller (or larger) element and place it into a temporary array.</li>
+      <li>Move to the next element in the selected half.</li>
+      <li>Repeat this process until all elements are placed in the temporary array.</li>
+   </ul>
+</p>
+<p><strong>Copy remaining elements:</strong>
+   <ul>
+      <li>If there are remaining elements in either half, copy them to the temporary array.</li>
+   </ul>
+</p>
+<p><strong>Copy the merged elements back to the original array:</strong>
+   <ul>
+      <li>Copy the elements from the temporary array back to the original array, replacing the unsorted elements with the sorted ones.</li>
+   </ul>
+</p>
+<p><strong>Repeat until all elements are sorted:</strong>
+   <ul>
+      <li>Continue splitting, sorting, and merging until all elements are sorted.</li>
+   </ul>
+</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section-padding section-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-12 mb-4 pb-2">
+            <a class="navbar-brand mb-2" href="index.html">
+              <i class="bi-back"></i>
+              <span>Algorithm<br>Visualization</span>
+            </a>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <h6 class="site-footer-title mb-3">Resources</h6>
+
+            <ul class="site-footer-links">
+              <li class="site-footer-link-item">
+                <a href="#" class="site-footer-link">Home</a>
+              </li>
+
+              <li class="site-footer-link-item">
+                <a href="#" class="site-footer-link">How it works</a>
+              </li>
+
+              <li class="site-footer-link-item">
+                <a href="#" class="site-footer-link">FAQs</a>
+              </li>
+
+              <li class="site-footer-link-item">
+                <a href="#" class="site-footer-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+            <h6 class="site-footer-title mb-3">Information</h6>
+
+            <p class="text-white d-flex mb-1">
+              <a href="https://pc.aiktc.ac.in/" class="site-footer-link">
+                https://pc.aiktc.ac.in/
+              </a>
+            </p>
+
+            <p class="text-white d-flex">
+              <a href="mailto:pc@aiktc.ac.in" class="site-footer-link">
+                pc@aiktc.ac.in
+              </a>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+            <h6 class="site-footer-title mb-3">Copyrights</h6>
+            <p class="copyright-text">
+              Copyright © 2024 Programmers Club, Department of Computer Engineering. All rights reserved.
+              <br /><br />Created By: Batch 2021-2025<br>
+              Qadri Md. Ambar Md. Azhar<br>
+              Iman Imran Navdekar<br>
+              Shiakh Muhammad Ismail Ishaque<br>
+              Sonde Arfat Asif
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

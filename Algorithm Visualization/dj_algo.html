@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Dijkstra Algorithm</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet" />
+    
+  </head>
+
+  <body id="top">
+    <main>
+      <nav class="navbar navbar-expand-lg justify-content-center">
+        <div class="container justify-content-center">
+          <a class="navbar-brand" href="index.html">
+            <i class="bi-back"></i>
+            <span>Algorithm<br>Visualization</span>
+          </a>
+
+          <div class="d-lg-none ms-auto me-4">
+            <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav ms-lg-5 me-lg-auto justify-content-center">
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="index.html#section_1"
+                  >Home</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="index.html#section_2"
+                  >Browse Algorithms</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="index.html#section_3"
+                  >How it works</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="index.html#section_4"
+                  >FAQs</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="index.html#section_5"
+                  >Contact</a
+                >
+              </li>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <header
+        class="site-header d-flex flex-column justify-content-center align-items-center"
+      >
+        <div class="container">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-lg-5 col-12 mb-5">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="index.html">Homepage</a>
+                  </li>
+
+                  <li class="breadcrumb-item active" aria-current="page">
+                    Dijkstra Algorithm
+                  </li>
+                </ol>
+              </nav>
+
+              <h2 class="text-white">
+                Introduction to <br />
+                Dijkstra Algorithm
+              </h2>
+
+              <div class="d-flex align-items-center mt-5">
+                <a
+                  href="./Geedy Approach/Dijkstra Algorithm/index.html"
+                  class="btn custom-btn custom-border-btn smoothscroll me-4"
+                  >Run Dijkstra Algorithm</a
+                >
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-12">
+              <div class="topics-detail-block bg-white shadow-lg">
+                <img
+                  src="images/topics/undraw_Remote_design_team_re_urdx.png"
+                  class="topics-detail-block-image img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="topics-detail-section section-padding" id="topics-detail">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-12 m-auto">
+              <h3 class="mb-4">Introduction to Dijkstra Algorithm</h3>
+
+              <p>
+                Dijkstra’s shortest path algorithm is similar to that of Prim’s algorithm as they both rely on finding the shortest path locally to 
+                achieve the global solution. However, unlike prim’s algorithm, the dijkstra’s algorithm does not find the minimum spanning tree; 
+                it is designed to find the shortest path in the graph from one vertex to other remaining vertices in the graph. Dijkstra’s algorithm 
+                can be performed on both directed and undirected graphs.
+              </p>
+
+              <p>
+                Since the shortest path can be calculated from single source vertex to all the other vertices in the graph, 
+                Dijkstra’s algorithm is also called <strong>shortest path algorithm.</strong> The output obtained is called <strong>shortest path spanning tree.</strong>
+              </p> <br>
+
+              <h3 class="mb-4">Algorithm</h3>
+              <p><strong>Initialization:</strong><br>
+                Set the initial node as the current node and its distance as 0. Set the distance to all other nodes as infinity and mark them as unvisited. Create an empty set to store visited nodes.
+<br>
+                <br><strong> Visit Neighbors:</strong><br>For the current node, consider all of its unvisited neighbors and calculate their tentative distances from the initial node. The tentative distance to a neighbor is the sum of the current node's distance and the weight of the edge connecting them.
+                <br>
+                <br><strong>Update Distances:</strong><br>If the calculated tentative distance to a neighbor is less than its current distance, update the neighbor's distance with the new value.
+                
+                <br> <br><strong>Mark as Visited:</strong><br>After considering all of the neighbors of the current node, mark the current node as visited and remove it from the unvisited set.
+                
+                <br><br><strong>Select Next Node:</strong><br> Select the unvisited node with the smallest tentative distance as the next current node.
+                 
+                <br><br><strong>Repeat:</strong><br> Repeat steps 2 to 5 until all nodes have been visited.
+                
+                <br><br><strong>Output</strong><br> The algorithm outputs the shortest distance from the initial node to each node in the graph and the shortest path from the initial node to each node.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section-padding section-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-12 mb-4 pb-2">
+            <a class="navbar-brand mb-2" href="index.html">
+              <i class="bi-back"></i>
+              <span>Algorithm<br>Visualization</span>
+            </a>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <h6 class="site-footer-title mb-3">Resources</h6>
+
+            <ul class="site-footer-links">
+              <li class="site-footer-link-item">
+                <a href="#" class="site-footer-link">Home</a>
+              </li>
+
+              <li class="site-footer-link-item">
+                <a href="#" class="site-footer-link">How it works</a>
+              </li>
+
+              <li class="site-footer-link-item">
+                <a href="#" class="site-footer-link">FAQs</a>
+              </li>
+
+              <li class="site-footer-link-item">
+                <a href="#" class="site-footer-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+            <h6 class="site-footer-title mb-3">Information</h6>
+
+            <p class="text-white d-flex mb-1">
+              <a href="https://pc.aiktc.ac.in/" class="site-footer-link">
+                https://pc.aiktc.ac.in/
+              </a>
+            </p>
+
+            <p class="text-white d-flex">
+              <a href="mailto:pc@aiktc.ac.in" class="site-footer-link">
+                pc@aiktc.ac.in
+              </a>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+            <h6 class="site-footer-title mb-3">Copyrights</h6>
+            <p class="copyright-text">
+              Copyright © 2024 Programmers Club, Department of Computer Engineering. All rights reserved.
+              <br /><br />Created By: Batch 2021-2025<br>
+              Qadri Md. Ambar Md. Azhar<br>
+              Iman Imran Navdekar<br>
+              Shiakh Muhammad Ismail Ishaque<br>
+              Sonde Arfat Asif
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

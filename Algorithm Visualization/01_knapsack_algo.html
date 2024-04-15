@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>0/1 knapsack Algorithm</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet" />
+    
+  </head>
+
+  <body id="top">
+    <main>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <i class="bi-back"></i>
+            <span>Algorithm<br>Visualization</span>
+          </a>
+
+          <div class="d-lg-none ms-auto me-4">
+            <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-5 me-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="index.html#section_1"
+                  >Home</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="index.html#section_2"
+                  >Browse Algorithms</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="index.html#section_3"
+                  >How it works</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="index.html#section_4"
+                  >FAQs</a
+                >
+              </li>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <header
+        class="site-header d-flex flex-column justify-content-center align-items-center"
+      >
+        <div class="container">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-lg-5 col-12 mb-5">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="index.html">Homepage</a>
+                  </li>
+
+                  <li class="breadcrumb-item active" aria-current="page">
+                    0/1 Knapsack Algorithm
+                  </li>
+                </ol>
+              </nav>
+
+              <h2 class="text-white">
+                Introduction to <br />
+                0/1 Knapsack Algorithm
+              </h2>
+
+              <div class="d-flex align-items-center mt-5">
+                <a
+                  href="./Dynamic Programming Approach/0-1 Knapsack Algorithm/index.html"
+                  class="btn custom-btn custom-border-btn smoothscroll me-4"
+                  >Run 0/1 Knapsack Algorithm</a
+                >
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-12">
+              <div class="topics-detail-block bg-white shadow-lg">
+                <img
+                  src="images/topics/undraw_Redesign_feedback_re_jvm0.png"
+                  class="topics-detail-block-image img-fluid"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="topics-detail-section section-padding" id="topics-detail">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-12 m-auto">
+              <h3 class="mb-4">Introduction to 0/1 Knapsack Algorithm</h3>
+
+              <p>
+                The 0/1 Knapsack Problem is a classic optimization problem in computer science and mathematics. It involves a knapsack with a maximum weight capacity and a set of items, each with a weight and a value. The goal is to determine the most valuable combination of items to include in the knapsack without exceeding its weight capacity. The term "0/1" refers to the constraint that each item can either be included in the knapsack or not, without the possibility of taking a fraction of an item.
+              </p>
+
+              <p>
+                The 0/1 Knapsack Algorithm is a dynamic programming algorithm that solves this problem efficiently. It creates a matrix, often referred to as a "knapsack table," where each cell represents the maximum value that can be achieved with a subset of the items up to a certain weight limit. The algorithm then fills in this table row by row, considering each item and deciding whether to include it in the subset based on its weight and value.
+              </p> <br>
+
+              <h3 class="mb-4">Algorithm</h3>
+              <p><strong>Initialization:</strong><br>
+                  Create a matrix, often called the "knapsack table," with rows representing items and columns representing the weight capacity of the knapsack. Initialize the first row and column to 0.
+              </p>
+              <p><strong>Fill the Knapsack Table:</strong><br>
+                  For each item in the list (starting from the first item):
+                  <br>
+                  - For each weight value from 1 to the maximum weight capacity of the knapsack:
+                  <br>
+                  - If the weight of the current item is less than or equal to the current weight value, consider two choices: including the current item in the knapsack or excluding it. Choose the maximum of these two values:
+                  <br>
+                  - The value of including the current item (current item's value + value in the table at [row - 1][column - current item's weight])
+                  <br>
+                  - The value of excluding the current item (value in the table at [row - 1][column])
+                  <br>
+                  - Update the value in the table at [row][column] with the maximum of the above two values.
+              </p>
+              <p><strong>Find the Items in the Knapsack:</strong><br>
+                  Starting from the last cell in the table ([number of items][maximum weight capacity]), backtrack through the table to determine which items were included in the optimal solution. If the value in the current cell is not equal to the value in the cell above it, the item corresponding to the current row was included in the knapsack. Subtract the item's weight from the current weight and move to the cell in the previous row and the remaining weight column.
+              </p>
+              <p><strong>Output:</strong><br>
+                  The algorithm outputs the total value of the items included in the knapsack and the list of items that were included.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section-padding section-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-12 mb-4 pb-2">
+            <a class="navbar-brand mb-2" href="index.html">
+              <i class="bi-back"></i>
+              <span>Algorithm<br>Visualization</span>
+            </a>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6">
+            <h6 class="site-footer-title mb-3">Resources</h6>
+
+            <ul class="site-footer-links">
+              <li class="site-footer-link-item">
+                <a href="#" class="site-footer-link">Home</a>
+              </li>
+
+              <li class="site-footer-link-item">
+                <a href="#" class="site-footer-link">How it works</a>
+              </li>
+
+              <li class="site-footer-link-item">
+                <a href="#" class="site-footer-link">FAQs</a>
+              </li>
+
+              <li class="site-footer-link-item">
+                <a href="#" class="site-footer-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+            <h6 class="site-footer-title mb-3">Information</h6>
+
+            <p class="text-white d-flex mb-1">
+              <a href="https://pc.aiktc.ac.in/" class="site-footer-link">
+                https://pc.aiktc.ac.in/
+              </a>
+            </p>
+
+            <p class="text-white d-flex">
+              <a href="mailto:pc@aiktc.ac.in" class="site-footer-link">
+                pc@aiktc.ac.in
+              </a>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+            <h6 class="site-footer-title mb-3">Copyrights</h6>
+            <p class="copyright-text">
+              Copyright © 2024 Programmers Club, Department of Computer Engineering. All rights reserved.
+              <br /><br />Created By: Batch 2021-2025<br>
+              Qadri Md. Ambar Md. Azhar<br>
+              Iman Imran Navdekar<br>
+              Shiakh Muhammad Ismail Ishaque<br>
+              Sonde Arfat Asif
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>
