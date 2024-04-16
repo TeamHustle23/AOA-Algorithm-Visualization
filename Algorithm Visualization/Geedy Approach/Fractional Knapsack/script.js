@@ -26,7 +26,14 @@ function createTable(selectedItems, n, p, w, maxw) {
 
   let table = document.createElement("table");
   let headerRow = table.insertRow();
-  let headers = ["Item No.", "Profit", "Weight", "Profit/Weight Ratio"];
+  let headers = [
+    "Item No.",
+    "Profit",
+    "Weight",
+    "Profit/Weight Ratio",
+    "Remaining Weight",
+    "Items Selected",
+  ];
   headers.forEach((headerText) => {
     let header = document.createElement("th");
     let textNode = document.createTextNode(headerText);
@@ -34,20 +41,42 @@ function createTable(selectedItems, n, p, w, maxw) {
     headerRow.appendChild(header);
   });
 
+  let totalWeight = 0;
+  let totalProfit = 0;
   for (let i = 0; i < n; i++) {
     let row = table.insertRow();
     let cell0 = row.insertCell();
     let cell1 = row.insertCell();
     let cell2 = row.insertCell();
     let cell3 = row.insertCell();
+    let cell4 = row.insertCell();
+    let cell5 = row.insertCell();
     cell0.appendChild(document.createTextNode(i + 1));
     cell1.appendChild(document.createTextNode(p[i]));
     cell2.appendChild(document.createTextNode(w[i]));
     cell3.appendChild(document.createTextNode((p[i] / w[i]).toFixed(2)));
+    cell4.appendChild(document.createTextNode((maxw - totalWeight).toFixed(2)));
+    if (selectedItems[i] === 1) {
+      cell5.appendChild(document.createTextNode("Yes"));
+      totalWeight += w[i];
+      totalProfit += p[i];
+    } else {
+      cell5.appendChild(document.createTextNode("No"));
+    }
   }
 
   data.innerHTML = "";
   data.appendChild(table);
+
+  let maxProfitElement = document.getElementById("ans");
+  if (maxProfitElement) {
+    maxProfitElement.textContent = "Max Profit: " + totalProfit.toFixed(2);
+  } else {
+    maxProfitElement = document.createElement("h3");
+    maxProfitElement.id = "ans";
+    maxProfitElement.textContent = "Max Profit: " + totalProfit.toFixed(2);
+    data.appendChild(maxProfitElement);
+  }
 }
 
 function fractionalKnapsack(n, w, p, maxw) {
@@ -77,15 +106,4 @@ function fractionalKnapsack(n, w, p, maxw) {
   }
 
   createTable(selectedItems, n, p, w, maxw);
-
-  const data = document.getElementById("data");
-  let maxProfitElement = document.getElementById("ans");
-  if (maxProfitElement) {
-    maxProfitElement.textContent = "Max Profit: " + totalProfit.toFixed(2);
-  } else {
-    maxProfitElement = document.createElement("h3");
-    maxProfitElement.id = "ans";
-    maxProfitElement.textContent = "Max Profit: " + totalProfit.toFixed(2);
-    data.appendChild(maxProfitElement);
-  }
 }
