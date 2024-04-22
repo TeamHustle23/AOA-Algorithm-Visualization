@@ -65,23 +65,13 @@ blocks.addEventListener("click", (e) => {
 });
 
 const drawLine = (x1, y1, x2, y2, ar) => {
-  if (dist[Number(ar[0])][Number(ar[1])] !== Infinity) {
-    document.getElementById(arr[0]).style.backgroundColor = "#333";
-    document.getElementById(arr[1]).style.backgroundColor = "#333";
-    return;
-  }
-
   const len = Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
   const slope = x2 - x1 ? (y2 - y1) / (x2 - x1) : y2 > y1 ? 90 : -90;
 
   dist[Number(ar[0])][Number(ar[1])] = Math.round(len / 10);
-  dist[Number(ar[1])][Number(ar[0])] = Math.round(len / 10);
 
   const line = document.createElement("div");
-  line.id =
-    Number(ar[0]) < Number(ar[1])
-      ? `line-${ar[0]}-${ar[1]}`
-      : `line-${ar[1]}-${ar[0]}`;
+  line.id = `line-${ar[0]}-${ar[1]}`;
   line.classList.add("line");
   line.style.width = `${len}px`;
   line.style.left = `${x1}px`;
@@ -100,20 +90,14 @@ const drawLine = (x1, y1, x2, y2, ar) => {
     n1 = Number(p.closest(".line").id.split("-")[1]);
     n2 = Number(p.closest(".line").id.split("-")[2]);
     dist[n1][n2] = Number(e.target.innerText);
-    dist[n2][n1] = Number(e.target.innerText);
   });
-  line.style.transform = `rotate(${
-    x1 > x2 ? Math.PI + Math.atan(slope) : Math.atan(slope)
-  }rad)`;
-
-  p.style.transform = `rotate(${
-    x1 > x2 ? (Math.PI + Math.atan(slope)) * -1 : Math.atan(slope) * -1
-  }rad)`;
+  line.style.transform = `rotate(${Math.atan(slope)}rad)`;
+  p.style.transform = `rotate(${Math.atan(slope) * -1}rad)`;
 
   line.append(p);
   blocks.appendChild(line);
-  document.getElementById(arr[0]).style.backgroundColor = "#333";
-  document.getElementById(arr[1]).style.backgroundColor = "#333";
+  document.getElementById(ar[0]).style.backgroundColor = "#333";
+  document.getElementById(ar[1]).style.backgroundColor = "#333";
 };
 
 const drawUsingId = (ar) => {
